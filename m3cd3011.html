@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<script>
+    var produtoJ, armazemI, menorA, estoqueA, estoqueP, armazem, produto, M = new Array(5);
+    for(armazemI=0; armazemI<5; armazemI++){
+        M[armazemI] = new Array(4);
+        for(produtoJ=0; produtoJ<4; produtoJ++){
+            M[armazemI][produtoJ] = Number(prompt("Informe a quantidade do " + (produtoJ+1) + "º produto que tem no " + (armazemI+1) + "º armazém."));
+        }
+    }
+    menorA = 0;
+    for(produtoJ=0; produtoJ<4; produtoJ++){
+        menorA += M[0][produtoJ]
+    }
+    for(i=0; i<4; i++){
+        for(j=0; j<4; j++){
+            document.write(Cc[i][j] + " ");
+        }
+        document.write("<br>");
+    }
+    for(armazemI=0; armazemI<5; armazemI++){
+        estoqueP = M[armazemI][0];
+        produto = 0;
+        for(produtoJ=0; produtoJ<4; produtoJ++){
+            estoqueA += M[armazemI][produtoJ];
+            if(estoqueP < M[armazemI][produtoJ]){
+                estoqueP = M[armazemI][produtoJ];
+                produto = produtoJ + 1;
+            }
+        }
+        document.write("<br>O produto de maior estoque no " + (armazemI+1) + "º armazém é o " + produto + "º.")
+        if(menorA > estoqueA){
+            menorA = estoqueA
+            armazem = armazemI + 1;
+        }
+    }
+    document.write("<br><br>O armazém com menor estoque é o " + armazem + "º.")
+</script>

@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+    var n, h, sexo, mulher, homem, soma, media;
+    n = 1;
+    mulher = 0;
+    homem = 0;
+    soma = 0;
+    while(n <= 10){
+        h = Number(prompt("Informe a altura da " + n + "a. pessoa."));
+        sexo = prompt("Informe se a " + n + "a. pessoa é homem ou mulher.");
+        if(h>1.65 && sexo=="mulher"){
+            mulher++;
+        }
+        if(h<1.8 && sexo=="homem"){
+            homem++;
+        }
+        soma += h;
+        n++;
+    }
+    media = soma/(n-1);
+    document.write("A quantidade de mulheres com mais de 1.65m é " + mulher + "<br>");
+    document.write("A quantidade de homens com menos de 1.80m é " + homem + "<br>");
+    document.write("A média de altura do grupo é " + media.toFixed(2) + "m.")
+</script>

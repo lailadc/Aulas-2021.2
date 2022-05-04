@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+    var n, p;
+    n = Math.trunc(Math.random()*35);
+    var A = new Array(n);
+    for(p=0; p<n; p++){
+        A[p] = Math.trunc(Math.random()*11);
+    }
+    document.write("Vetor informado: A = " + A + "<br>");
+    var nota, cont = new Array(11);
+for (nota = 0; nota < 11; nota ++){
+	cont[nota] = 0;
+}
+for (i = 0; i < n; i++){
+	for (nota = 0; nota < 11; nota++){
+		if (A[i] == nota){
+			cont[nota]++;
+		}
+	}
+}
+for (nota = 0; nota < 11; nota++){
+	document.write(nota+" aparece "+cont[nota]+" vezes.<br>");
+}
+
+</script>

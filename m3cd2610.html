@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+    var s, x, n;
+    s = 0;
+    n = Number(prompt("Informe quantos termos a serem somados."));
+    document.write("S = ")
+    for(x=1; x<=n; x++){
+        if(x != n){
+            if(x % 2 == 1){
+                s += x/(x+1);
+                document.write(x + "/" + (x+1) + " - ");
+            }else{
+                s -= x/(x+1);
+                document.write(x + "/" + (x+1) + " + ");
+            }
+        }else{
+            document.write(n + "/" + (n+1) + ".<br><br>");
+        }
+    }
+    document.write("S = " + s.toFixed(2));
+</script>

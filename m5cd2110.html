@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<script>
+    var a0, a1, an, n, x;
+    a0 = 0;
+    a1 = 1;
+    n = prompt("Informe quantos fatores apresentar.");
+    while(n < 2){
+        alert("Informe no mínimo 2 fatores.");
+        n = prompt("Informe quantos fatores apresentar.");
+    }
+    document.write("Os " + n + " primeiros termos da sequência de Fibonacci são:<br>");
+    document.write(a0 + " " + a1 + " ");
+    for(x=2; x<n; x++){
+        an = a0 + a1;
+        document.write(an + " ");
+        a0 = a1;
+        a1 = an;
+    }
+</script>

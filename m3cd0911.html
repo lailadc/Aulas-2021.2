@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script>
+    var num, resto, inverso, digito;
+    inverso = 0;
+    digito = 0;
+    num = parseInt(prompt("Informe o número a ser invertido:"));
+    document.write("Número lido: "+num+"<br>");
+    while (num > 0){
+	    resto = num%10;
+	    inverso = inverso * 10 + resto;
+	    num = parseInt(num/10);
+        digito++;
+    }
+    document.write("O inverso do número é "+inverso+"<br>");
+    document.write("O número tem "+digito+" digitos.");
+</script>

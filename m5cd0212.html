@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<script>
+    var i, iTurno, j, jDia, ij, turno, turnoM, turnoMa, dia, diaS, diaMe, consumo = new Array(3);
+    ij = 0;
+    turnoMa = 0;
+    diaMe = 10000;
+    for(i=0; i<3; i++){
+        consumo[i] = new Array(5);
+        for(j=0; j<5; j++){
+            turno = 0;
+            consumo[i][j] = Math.round(Math.random()*1000);
+            turno += consumo[i][j];
+        }
+        if(turno > turnoMa){
+            turnoMa = turno;
+            turnoM = i;
+        }
+    }
+    document.write("S  T  Q  Q  S<br>")
+    for(i=0; i<3; i++){
+        document.write((i+1) + "º: ");
+        for(j=0; j<5; j++){
+            document.write(consumo[i][j] + " ");
+        }
+        document.write("<br>");
+    }
+    for(j=0; j<5; j++){
+        for(i=0; i<3; i++){
+            dia = 0;
+            dia += consumo[i][j];
+            if(ij < consumo[i][j]){
+                ij = consumo[i][j];
+                iTurno = i;
+                jDia = j;
+            }
+        }
+        if(dia < diaMe){
+            diaMe = dia;
+            diaS = j;
+        }
+    }
+    document.write("<br>O maior consumo de água ocorre no " + (jDia+1) + "º dia útil da semana durante o " + (iTurno+1) + "º turno.<br>");
+    document.write("O dia da semana com menor consumo de água é o " + (diaS+1) + "º dia útil da semana.<br>");
+    document.write("O turno que mais consome água é o " + (turnoM+1) + "º.");
+</script>
